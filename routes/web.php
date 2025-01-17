@@ -17,6 +17,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/produtos', [ProductController::class, 'store'])->name('produtos.store');
     Route::get('/create-product', [ProductController::class, 'createProduct']);
     Route::get('/obter-token', [ProductController::class, 'getToken']);
-    Route::get('/integracao', [ProductController::class, 'showIntegration']);
+    Route::get('/integracao', [ProductController::class, 'showIntegration'])->name('integracao');
     Route::post('/renovar-token', [ProductController::class, 'refreshToken'])->name('renovar-token');
 });

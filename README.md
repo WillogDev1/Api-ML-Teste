@@ -1,66 +1,140 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Guia de Instalação e Configuração
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este guia orienta sobre como configurar um ambiente de desenvolvimento local utilizando XAMPP, Laravel e Node.js/NPM.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 1. Instalação do XAMPP
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Download do XAMPP:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Acesse o site oficial do XAMPP: [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
 
-## Learning Laravel
+Escolha a versão adequada para o seu sistema operacional e faça o download.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Instalação:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Execute o arquivo .exe baixado.
+- Siga as instruções no instalador para instalar o XAMPP.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Iniciar o XAMPP:
 
-## Laravel Sponsors
+- Após a instalação, inicie o XAMPP Control Panel.
+- Inicie os módulos Apache e MySQL.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Verificar Funcionamento:
 
-### Premium Partners
+- Acesse [http://localhost](http://localhost) para verificar se o Apache está funcionando corretamente.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## 2. Instalação do Laravel
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Instalar Composer:
 
-## Code of Conduct
+Acesse o site oficial do Composer: [https://getcomposer.org/](https://getcomposer.org/)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Baixe e instale o Composer seguindo as instruções.
 
-## Security Vulnerabilities
+### Criar Projeto Laravel:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Após o Composer estar instalado, abra o terminal e navegue até a pasta onde deseja criar o projeto Laravel.
 
-## License
+1. Vá até a pasta `XAMPP/htdocs`.
+2. Exclua todo o conteúdo existente.
+Execute o comando:
+```bash
+composer global require laravel/installer
+```
+3. Escolha Livewire / Jetstream.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. Cole o conteúdo da pasta `exemplo-app` do Laravel.
+
+## 3. Instalação do Node.js e NPM
+
+### Download e Instalação do Node.js
+
+1. Acesse o site oficial do Node.js: [https://nodejs.org/](https://nodejs.org/)
+2. Faça o download da versão LTS ou mais recente.
+3. Instale Node.js e npm.
+
+### Verificar Instalação
+
+Verifique se o Node.js e o npm foram instalados corretamente executando os seguintes comandos no terminal:
+
+```bash
+node -v
+npm -v
+```
+
+Acesse a pasta htdocs e rode
+```bash
+npm run build
+```
+
+# Configuração das Variáveis .env
+
+Você precisa configurar as seguintes variáveis no seu arquivo `.env` para autenticar com o Mercado Livre:
+
+## Variáveis:
+
+1. **ML_CLIENT_ID**:  
+   - Este é o seu **Client ID** fornecido pelo Mercado Livre.  
+   - Exemplo: `ML_CLIENT_ID=seu-client-id-aqui`
+
+2. **ML_CLIENT_SECRET**:  
+   - Este é o seu **Client Secret** fornecido pelo Mercado Livre.  
+   - Exemplo: `ML_CLIENT_SECRET=seu-client-secret-aqui`
+
+3. **ML_CODE**:  
+   - Usado durante o fluxo de autorização do Mercado Livre. Deixe vazio por enquanto.  
+   - Exemplo: `ML_CODE=`
+
+4. **ML_ACCESS_TOKEN**:  
+   - Token de acesso fornecido após a autorização bem-sucedida.  
+   - Exemplo: `ML_ACCESS_TOKEN=`
+
+5. **ML_REFRESH_TOKEN**:  
+   - Token usado para obter um novo **access_token** quando o anterior expirar.  
+   - Exemplo: `ML_REFRESH_TOKEN=`
+
+6. **ML_URL**:  
+   - URL da API do Mercado Livre, geralmente não precisa ser alterada.  
+   - Exemplo: `ML_URL=`
+
+### Exemplo Final:
+
+ML_CLIENT_ID=123456789  
+ML_CLIENT_SECRET=abcdef123456  
+ML_CODE=  
+ML_ACCESS_TOKEN=  
+ML_REFRESH_TOKEN=  
+ML_URL=  
+
+**Preencha apenas ML_CLIENT_ID e ML_CLIENT_SECRET**.
+
+Depois, rode:
+
+    php artisan optimize  
+
+Ao acessar a página de `/integracao`, clique em "Autorizar Aplicação" para gerar seu Code.
+
+Salve o Code no arquivo `.env` como `ML_CODE` e, novamente, rode:
+
+    php artisan optimize  
+
+Cole o Code gerado em "Obter Access Token" e clique em "Obter".
+
+Salve `ML_ACCESS_TOKEN` e `ML_REFRESH_TOKEN` no arquivo `.env` e rode:
+
+    php artisan optimize  
+
+
+## Observações:
+
+O cadastro do produto foi limitado à categoria **MLB3530**. Cada categoria possui diferentes campos obrigatórios, como ISBN, Cor, etc. Esta categoria é genérica e está disponível na documentação da API do Mercado Livre.
+
+Portanto, não foi implementada a opção de escolha de categorias específicas, pois isso poderia resultar em erros inesperados.
+
+Além disso, optei por não salvar as variáveis no banco de dados por cautela. Decidi mantê-las no arquivo `.env`, o que torna o aplicativo um pouco "engessado". No entanto, como não tenho certeza se seria uma boa prática armazenar essas informações no banco ou em sessão, preferi seguir essa abordagem.
+
